@@ -5,7 +5,8 @@ const connection = mysql.createConnection({ //link เข้ากับ sql โ
     host: dbconfig.HOST, //Host from db.config
     user: dbconfig.USER, //user from db.config
     password: dbconfig.PASSWORD, //password from db.config
-    database: dbconfig.DB // database from db.config
+    database: dbconfig.DB,// database from db.config
+    port:3306
 });
 connection.connect((error)=>{ //check error
     if(error) console.log("MYsql connection " +error);//error : show error

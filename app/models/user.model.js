@@ -19,9 +19,6 @@ User.checkUsername = (username,result) =>{ // check Username then send result
         if(err){ //error
             console.log("Error : "+err);
             result(err,null);
-
-
-
             return; // return เพื่ออกจาก  callback ของ sql.query
         }
         if(res.length){ // found username

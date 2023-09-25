@@ -1,8 +1,7 @@
 module.exports ={
-    HOST: "localhost",
-    USER:"root",
-    PASSWORD:"",
-    DB:"testweb"
-
+    HOST: "sql.freedb.tech",
+    USER:"freedb_Natthapat",
+    PASSWORD:"b%7eM@%eCeSFSuW",
+    DB:"freedb_TestWeb"
 };
 //database setting
