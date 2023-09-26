@@ -1,7 +1,5 @@
-const { is } = require("express/lib/request");
 const User = require("../models/user.model"); 
 const bcrypt = require("bcryptjs");
-const { escape } = require("mysql2");
 const req = require("express/lib/request");
 
 const validUsername = (req, res) => {
