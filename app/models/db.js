@@ -10,7 +10,10 @@ const connection = mysql.createConnection({ //link เข้ากับ sql โ
     ssl: {
         minVersion: process.env.minVersion,
         rejectUnauthorized: process.env.TIDB_ENABLE_SSL,
-      }
+      },
+      supportBigNumbers: true,
+      enableKeepAlive: true
+
 });
 
 
