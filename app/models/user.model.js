@@ -130,6 +130,7 @@ User.updateUser = (id,data,result) =>{
 }
 
 User.removeUser =(id,result) => {
+    removeOldimage(id)
     sql.query("DELETE FROM users WHERE id=?",[id],(err,res)=>{
         if(err){
             console.log("Delete Error:" + err);
