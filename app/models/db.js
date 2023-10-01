@@ -1,11 +1,11 @@
 const mysql = require("mysql2"); //เรียกใช้ mysql2 (link in database)
 const dbconfig = require("../config/db.config"); //เรียกตัว module จาก  db.config 
 require('dotenv').config()
-const connection = mysql.createConnection({ //link เข้ากับ sql โดยใช้ข้อมูลจาก dbconfig.js
-    host: process.env.TIDB_HOST, //Host from db.config
-    user:  process.env.TIDB_USER, //user from db.config
-    password: process.env.TIDB_PASSWORD, //password from db.config
-    database: process.env.TIDB_DATABASE,// database from db.config
+const connection = mysql.createConnection({ 
+    host: process.env.TIDB_HOST, 
+    user:  process.env.TIDB_USER, 
+    password: process.env.TIDB_PASSWORD, 
+    database: process.env.TIDB_DATABASE,
     port: process.env.TIDB_PORT,
     ssl: {
         minVersion: process.env.minVersion,
@@ -13,7 +13,6 @@ const connection = mysql.createConnection({ //link เข้ากับ sql โ
       },
       supportBigNumbers: true,
       enableKeepAlive: true
-
 });
 
 

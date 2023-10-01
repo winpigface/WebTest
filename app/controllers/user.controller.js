@@ -1,8 +1,8 @@
 const User = require("../models/user.model"); 
 const bcrypt = require("bcryptjs");
-const req = require("express/lib/request");
 
-const validUsername = (req, res) => {
+// search username
+const validUsername = (req, res) => { 
   User.checkUsername(req.params.us, (err, data) => {
     if (err) {
       if (err.kind == "not_found") {
@@ -20,7 +20,7 @@ const validUsername = (req, res) => {
     }
   });
 };
-
+//Create user
 const createNewUser = (req,res)=>{
   
   if(!req.body){
@@ -42,7 +42,7 @@ const createNewUser = (req,res)=>{
 
   })
 };
-
+// Login
 const login = (req,res) => {
   if(!req.body){
     res.status(400).send({message: "Content can not be empty."});
@@ -65,6 +65,7 @@ const login = (req,res) => {
   });
 };
 
+// Show all users
 const getAllUsers = (req,res) =>{
   User.getAllRecords((err,data)=>{
     if(err){
@@ -73,6 +74,7 @@ const getAllUsers = (req,res) =>{
   });
 }
 
+// update user
 const updateUserCtrl  = (req,res)=>{
   if(!req.body){
     res.status(400).send({message: "Content can not be empty"});
@@ -95,6 +97,7 @@ const updateUserCtrl  = (req,res)=>{
   });
 };
 
+//delete user
 const deleteUser = (req,res) => {
   console.log("parameters: "+ req.params.id + ", " +req.params.p1 + ", "+req.params.p2);
   User.removeUser(req.params.id,(err,data)=>{
